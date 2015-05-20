@@ -2,7 +2,7 @@ module Ruboty
   module Handlers
     class Sebastian < Base
       # コマンドのパターン
-      on /zihou/, name: 'zihou', description: 'output test'
+      on /zihou (?<mode>.*)\z/, name: 'zihou', description: 'output zihou'
 
       # コマンドに対応したアクションを呼び出す
       def zihou(message)
