@@ -1,6 +1,6 @@
 module Ruboty
   module Actions
-    class GreetingBeforeClose < Base
+    class GreetingBeforeClosing < Base
       def call
         message.reply("hoge")
       end

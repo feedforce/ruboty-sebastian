@@ -1,6 +1,6 @@
 module Ruboty
   module Actions
-    class MorningGreeting < Base
+    class GreetingAtClosing < Base
       def call
         message.reply("hoge")
       end
