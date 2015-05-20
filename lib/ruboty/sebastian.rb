@@ -1,7 +1,7 @@
 require "ruboty/sebastian/version"
-require "ruboty/actions/morning_greeting"
-require "ruboty/actions/greeting_before_close"
-require "ruboty/actions/closing_greeting"
+require "ruboty/actions/greeting_at_morning"
+require "ruboty/actions/greeting_before_closing"
+require "ruboty/actions/greeting_at_closing"
 require "ruboty/handlers/sebastian"
 
 module Ruboty
