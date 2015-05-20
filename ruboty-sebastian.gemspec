@@ -7,16 +7,16 @@ Gem::Specification.new do |spec|
   spec.name          = "ruboty-sebastian"
   spec.version       = Ruboty::Sebastian::VERSION
   spec.authors       = ["yukita"]
-  spec.email         = ["yukiyakonkon5@hotmail.co.jp"]
+  spec.email         = ["yukiyakonkon1024@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{セバスチャンbotを追加します。}
+  spec.description   = %q{朝の挨拶、東京ドームのスケジュール、定時のお知らせをしてくれるセバスチャンbotを追加します。}
+  spec.homepage      = ""
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata['allowed_push_host'] = "http://mygemserver.com"
   else
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
@@ -26,6 +26,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "ruboty"
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
+
 end
