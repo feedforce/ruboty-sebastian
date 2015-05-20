@@ -21,18 +21,6 @@ messages:
       close_message: "東京ドームは本日 %1$s でございます。"
     cityhall:
       message: "東京ドームシティホールでは %1$s が開催されますので、お出かけの際はご注意ください。詳細は %2$s をご覧下さい。"
-  scheduler:
-    message: "%1$s %2$sより %3$s"
-    sebastian_message: "%2$s"
-    header:
-    - "まもなくご予定のお時間でございます。"
-    - "ご予定をお知らせにあがりました。"
-    - "まもなくのご予定がございます。"
-    sebastian_header:
-    - "皆様へのご連絡がございます。"
-    footer:
-    - "以上でございます。"
-    - "以上、ご確認ください。"
   before_period:
     header:
     - "まもなく19時、業務終了のお時間でございます。"
