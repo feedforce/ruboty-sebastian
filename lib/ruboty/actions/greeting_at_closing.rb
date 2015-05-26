@@ -7,6 +7,7 @@ module Ruboty
         messages = load_message("greeting_at_closing")
 
         message.reply(messages.header[Random.new.rand(0..2)]) # 一言目
+        message.reply(messages.middle[Random.new.rand(0..2)]) # 二言目
       end
     end
   end
