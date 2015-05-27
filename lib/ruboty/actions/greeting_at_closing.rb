@@ -9,8 +9,7 @@ module Ruboty
       end
 
       def reply_message(messages)
-        mes = messages[Random.new.rand(0...(messages.size))]
-        message.reply(mes) if mes 
+        message.reply(messages.sample)
       end
     end
   end
