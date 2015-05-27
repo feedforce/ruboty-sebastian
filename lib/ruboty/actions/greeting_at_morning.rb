@@ -18,6 +18,15 @@ module Ruboty
 
         message.reply(sprintf(greetings.tokyodome.message, "【球団戦】", "球団1 - 球団2")) if tokyodome_event
         message.reply(sprintf(greetings.cityhall.message,  "イベント名", "詳細URL")) if cityhall_event
+
+        # 三言目
+        if "実行年の最終出社日である"
+          greetings.last_of_year.footer.each {|mes| message.reply(mes)}
+        elsif now.month == 1 && now.day == 1
+          message.reply(greetings.first_of_year.footer)
+        else
+          message.reply(greetings.footer)
+        end
       end
 
       def greetings
