@@ -7,7 +7,7 @@ require "ruboty/handlers/sebastian"
 module Ruboty
   module Sebastian
     class Settings < Settingslogic
-      source File.expand_path('../../settings.yml', File.dirname(__FILE__))
+      source File.expand_path('../../settings.yml', __dir__)
       namespace "messages"
     end
   end
