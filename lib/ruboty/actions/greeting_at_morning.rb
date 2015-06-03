@@ -36,6 +36,9 @@ module Ruboty
 
       def last_of_year?
       end
+
+      def first_of_year?
+      end
     end
   end
 end
