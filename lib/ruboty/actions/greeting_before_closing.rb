@@ -2,7 +2,8 @@ module Ruboty
   module Actions
     class GreetingBeforeClosing < Base
       def call
-        message.reply("hoge")
+        # 一言目
+        message.reply(greetings.header.sample)
       end
 
       private
