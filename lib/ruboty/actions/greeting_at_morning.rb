@@ -33,6 +33,9 @@ module Ruboty
       def greetings
         @messages ||= Sebastian::Settings.greeting_at_morning
       end
+
+      def last_of_year?
+      end
     end
   end
 end
