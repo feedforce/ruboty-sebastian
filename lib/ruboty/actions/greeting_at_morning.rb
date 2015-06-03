@@ -2,11 +2,10 @@ module Ruboty
   module Actions
     class GreetingAtMorning < Base
       def call
-        now  = Time.now
         week = ["日", "月", "火", "水", "木", "金", "土"]
 
         # 一言目
-        if first_of_year?(now)
+        if first_of_year?
           message.reply(greetings.first_of_year.header % now.year)
         else
           message.reply(greetings.header % [now.month, now.day, week[now.wday]])
@@ -20,7 +19,7 @@ module Ruboty
         message.reply(greetings.cityhall.message  % ["イベント名", "詳細URL"]) if cityhall_event
 
         # 三言目
-        if last_of_year?(now)
+        if last_of_year?
           greetings.last_of_year.footer.each {|mes| message.reply(mes)}
         elsif first_of_year?(now)
           message.reply(greetings.first_of_year.footer)
@@ -34,7 +33,11 @@ module Ruboty
         @messages ||= Sebastian::Settings.greeting_at_morning
       end
 
-      def last_of_year?(now)
+      def now
+        @now ||= Time.now
+      end
+
+      def last_of_year?
         weekday = Time.new(now.year, 12, 29).wday
 
         case weekday
@@ -49,7 +52,7 @@ module Ruboty
         now.month == 12 && now.day == last_day ? true : false
       end
 
-      def first_of_year?(now)
+      def first_of_year?
         weekday = Time.new(now.year, 1, 5).wday
 
         case weekday
