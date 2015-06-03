@@ -12,8 +12,8 @@ module Ruboty
         end
 
         #️ 二言目
-        tokyodome_event = "" # 後日実装するメソッドからイベントを取得する
-        cityhall_event  = "" # 後日実装するメソッドからイベントを取得する
+        tokyodome_event = nil # 後日実装するメソッドからイベントを取得する
+        cityhall_event  = nil # 後日実装するメソッドからイベントを取得する
 
         message.reply(greetings.tokyodome.message % ["【球団戦】", "球団1 - 球団2"]) if tokyodome_event
         message.reply(greetings.cityhall.message  % ["イベント名", "詳細URL"]) if cityhall_event
