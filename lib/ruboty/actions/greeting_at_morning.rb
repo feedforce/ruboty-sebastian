@@ -49,8 +49,19 @@ module Ruboty
         now.month == 12 && now.day == last_day ? true : false
       end
 
-      def first_of_year?
-        
+      def first_of_year?(now)
+        p weekday = Time.new(now.year, 1, 5).wday
+
+        case weekday
+        when 0
+          p first_day = 7
+        when 6
+          p first_day = 6
+        else
+          p first_day = 5
+        end
+
+        now.month == 1 && now.day == first_day ? true : false
       end
     end
   end
