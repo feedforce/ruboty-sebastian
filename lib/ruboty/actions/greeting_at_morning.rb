@@ -11,7 +11,7 @@ module Ruboty
           message.reply(greetings.header % [now.month, now.day, week[now.wday]])
         end
 
-        #️ 二言目
+        # 二言目
         tokyodome_event = nil # 後日実装するメソッドからイベントを取得する
         cityhall_event  = nil # 後日実装するメソッドからイベントを取得する
 
