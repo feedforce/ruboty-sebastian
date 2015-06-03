@@ -29,6 +29,7 @@ module Ruboty
         end
       end
 
+      private
       def greetings
         @messages ||= Sebastian::Settings.greeting_at_morning
       end
