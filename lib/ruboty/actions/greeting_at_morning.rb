@@ -35,7 +35,7 @@ module Ruboty
       end
 
       def last_of_year?(now)
-        weekday = Time.new(now.year, 12, 29).mday
+        weekday = Time.new(now.year, 12, 29).wday
 
         case weekday
         when 0
@@ -50,7 +50,7 @@ module Ruboty
       end
 
       def first_of_year?
-
+        
       end
     end
   end
