@@ -4,6 +4,9 @@ module Ruboty
       def call
         # 一言目
         message.reply(greetings.header.sample)
+
+        # 二言目
+        message.reply(greetings.middle)
       end
 
       private
