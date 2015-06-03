@@ -44,7 +44,7 @@ module Ruboty
         last_day = 28 if last.saturday?
         last_day ||= 29
 
-        now.month == 12 && now.day == last_day ? true : false
+        now.month == 12 && now.day == last_day
       end
 
       def first_of_year?
@@ -54,7 +54,7 @@ module Ruboty
         first_day = 6 if first.saturday?
         first_day ||= 5
 
-        now.month == 1 && now.day == first_day ? true : false
+        now.month == 1 && now.day == first_day
       end
     end
   end
