@@ -34,10 +34,23 @@ module Ruboty
         @messages ||= Sebastian::Settings.greeting_at_morning
       end
 
-      def last_of_year?
+      def last_of_year?(now)
+        weekday = Time.new(now.year, 12, 29).mday
+
+        case weekday
+        when 0
+          last_day = 27
+        when 6
+          last_day = 28
+        else
+          last_day = 29
+        end
+
+        now.month == 12 && now.day == last_day ? true : false
       end
 
       def first_of_year?
+
       end
     end
   end
