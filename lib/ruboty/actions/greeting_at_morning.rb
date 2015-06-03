@@ -6,7 +6,7 @@ module Ruboty
         week = ["日", "月", "火", "水", "木", "金", "土"]
 
         # 一言目
-        if now.month == 1 && now.day == 1
+        if first_of_year?(now)
           message.reply(sprintf(greetings.first_of_year.header, now.year))
         else
           message.reply(sprintf(greetings.header, now.month, now.day, week[now.wday]))
@@ -20,9 +20,9 @@ module Ruboty
         message.reply(greetings.cityhall.message  % ["イベント名", "詳細URL"]) if cityhall_event
 
         # 三言目
-        if "実行年の最終出社日である"
+        if last_of_year?(now)
           greetings.last_of_year.footer.each {|mes| message.reply(mes)}
-        elsif now.month == 1 && now.day == 1
+        elsif first_of_year?(now)
           message.reply(greetings.first_of_year.footer)
         else
           message.reply(greetings.footer)
