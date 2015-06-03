@@ -10,7 +10,10 @@ module TokyoDomeEvent
       http.get(uri.path)
     end
  
-    doc = Nokogiri::HTML.parse(response.body.force_encoding('UTF-8')) 
+    doc = Nokogiri::HTML.parse(response.body.force_encoding('UTF-8'))
+ 
+    title = doc.xpath("//span[text()=#{target.day}]/following-sibling::*")
+    return nil if column.nil?
   end
  
   def get_event_from_dome
