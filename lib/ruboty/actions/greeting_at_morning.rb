@@ -38,31 +38,21 @@ module Ruboty
       end
 
       def last_of_year?
-        weekday = Time.new(now.year, 12, 29).wday
+        last = Time.new(now.year, 12, 29)
 
-        case weekday
-        when 0
-          last_day = 27
-        when 6
-          last_day = 28
-        else
-          last_day = 29
-        end
+        last_day = 27 if last.sunday?
+        last_day = 28 if last.saturday?
+        last_day ||= 29
 
         now.month == 12 && now.day == last_day ? true : false
       end
 
       def first_of_year?
-        weekday = Time.new(now.year, 1, 5).wday
+        first = Time.new(now.year, 1, 5)
 
-        case weekday
-        when 0
-          first_day = 7
-        when 6
-          first_day = 6
-        else
-          first_day = 5
-        end
+        first_day = 7 if first.sunday?
+        first_day = 6 if first.saturday?
+        first_day ||= 5
 
         now.month == 1 && now.day == first_day ? true : false
       end
