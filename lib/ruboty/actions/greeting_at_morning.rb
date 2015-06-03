@@ -21,7 +21,7 @@ module Ruboty
         # 三言目
         if last_of_year?
           greetings.last_of_year.footer.each {|mes| message.reply(mes)}
-        elsif first_of_year?(now)
+        elsif first_of_year?
           message.reply(greetings.first_of_year.footer)
         else
           message.reply(greetings.footer)
