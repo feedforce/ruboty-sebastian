@@ -5,7 +5,8 @@ require 'nokogiri'
 module TokyoDomeEvent 
   def get_event_from_cityhall
     now = Time.now
-    uri = URI.parse("http://www.tokyo-dome.co.jp/tdc-hall/event/")
+    url = "http://www.tokyo-dome.co.jp/tdc-hall/event/"
+    uri = URI.parse(url)
  
     response = Net::HTTP.start(uri.host, uri.port) do |http|
       http.get(uri.path)
@@ -19,7 +20,7 @@ module TokyoDomeEvent
     title    = column.children.text.strip
     fragment = column.children.first.values
 
-    {title: title, url: url}
+    {title: title, url: url+fragment}
   end
  
   def get_event_from_dome
