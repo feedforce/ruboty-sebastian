@@ -29,5 +29,7 @@ module TokyoDomeEvent
   end
  
   def get_event_from_dome
+    now = Time.now
+    uri = URI.parse("http://www.tokyo-dome.co.jp/dome/schedule/?y=#{now.year}&m=#{now.month}")
   end
 end
