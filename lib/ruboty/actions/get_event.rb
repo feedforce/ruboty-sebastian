@@ -31,5 +31,9 @@ module TokyoDomeEvent
   def get_event_from_dome
     now = Time.now
     uri = URI.parse("http://www.tokyo-dome.co.jp/dome/schedule/?y=#{now.year}&m=#{now.month}")
+ 
+    response = Net::HTTP.start(uri.host, uri.port) do |http|
+      http.get("#{uri.path}?#{uri.query}")
+    end
   end
 end
