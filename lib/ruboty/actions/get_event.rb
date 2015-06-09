@@ -17,6 +17,8 @@ module TokyoDomeEvent
 
     title = column.children.text.strip
     url   = column.children.first.values
+
+    {title: title, url: url}
   end
  
   def get_event_from_dome
