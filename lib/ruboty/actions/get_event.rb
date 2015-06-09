@@ -35,5 +35,7 @@ module TokyoDomeEvent
     response = Net::HTTP.start(uri.host, uri.port) do |http|
       http.get("#{uri.path}?#{uri.query}")
     end
+
+    doc = Nokogiri::HTML.parse(response.body.force_encoding('UTF-8'))
   end
 end
