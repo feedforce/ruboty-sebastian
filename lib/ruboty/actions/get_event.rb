@@ -16,8 +16,8 @@ module TokyoDomeEvent
     column = doc.xpath("//span[text()=#{now.day}]/following-sibling::*")
     return nil if column.nil?
 
-    title = column.children.text.strip
-    url   = column.children.first.values
+    title    = column.children.text.strip
+    fragment = column.children.first.values
 
     {title: title, url: url}
   end
