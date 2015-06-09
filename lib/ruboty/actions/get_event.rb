@@ -18,7 +18,7 @@ module TokyoDomeEvent
     return nil if column.nil?
 
     title    = column.children.text.strip
-    fragment = column.children.first.values
+    fragment = column.children.first.values.first.to_s
 
     {title: title, url: url+fragment}
   end
