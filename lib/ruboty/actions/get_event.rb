@@ -35,5 +35,6 @@ module TokyoDomeEvent
       vs = column[1].children.text.strip
     end
     
-    {title: title, vs: vs}  end
+    {title: title, vs: vs}
+  end
 end
