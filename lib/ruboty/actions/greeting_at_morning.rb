@@ -17,8 +17,8 @@ module Ruboty
         tokyodome = get_event_from_dome(now)
         cityhall  = get_event_from_cityhall(now)
 
-        message.reply(greetings.tokyodome.message % [tokyodome[:title], tokyodome[:vs]]) if tokyodome
-        message.reply(greetings.cityhall.message  % [cityhall[:title], cityhall[:url]]) if cityhall
+        message.reply(greetings.tokyodome.message % tokyodome) if tokyodome
+        message.reply(greetings.cityhall.message  % cityhall)  if cityhall
 
         # 三言目
         if last_of_year?
