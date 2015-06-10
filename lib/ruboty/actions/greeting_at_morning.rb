@@ -15,10 +15,10 @@ module Ruboty
 
         # 二言目
         tokyodome_event = nil # 後日実装するメソッドからイベントを取得する
-        cityhall_event  = nil # 後日実装するメソッドからイベントを取得する
+        cityhall = get_event_from_cityhall # 後日実装するメソッドからイベントを取得する
 
         message.reply(greetings.tokyodome.message % ["【球団戦】", "球団1 - 球団2"]) if tokyodome_event
-        message.reply(greetings.cityhall.message  % ["イベント名", "詳細URL"]) if cityhall_event
+        message.reply(greetings.cityhall.message  % [cityhall[:title], cityhall[:url]]) if cityhall
 
         # 三言目
         if last_of_year?
