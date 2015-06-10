@@ -25,8 +25,6 @@ module TokyoDomeEvent
     doc = Nokogiri::HTML.parse(open(url).read.force_encoding('UTF-8'))
 
     column = doc.xpath("//th[contains(./text(), '#{now.day}日')]/following-sibling::*")
-    return nil if column.nil?
- 
     titles = column.xpath(".//p")
     return nil if titles[0].nil? && titles[1].nil?
 
