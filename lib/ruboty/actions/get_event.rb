@@ -39,6 +39,7 @@ module TokyoDomeEvent
     {title: title, vs: vs}
   end
 
+  private
   def get_parse_data(url)
     uri = URI.parse(url)
  
