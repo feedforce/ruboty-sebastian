@@ -25,11 +25,15 @@ module TokyoDomeEvent
     doc = Nokogiri::HTML.parse(open(url).read.force_encoding('UTF-8'))
 
     column = doc.xpath("//th[contains(./text(), '#{now.day}日')]/following-sibling::*").xpath(".//p")
-    return if column[0].nil? && column[1].nil?
+    return if column.empty?
 
-    title = column[0].children.attribute('alt').value.strip
-    vs = column[1].children.text.strip
-
-    {title: title, vs: vs}
-  end
+    if column[0].children.search('img').empty?
+      title = column.text.strip
+      vs = ""
+    else
+      title = column[0].children.attribute('alt').value.strip
+      vs = column[1].children.text.strip
+    end
+    
+    {title: title, vs: vs}  end
 end
