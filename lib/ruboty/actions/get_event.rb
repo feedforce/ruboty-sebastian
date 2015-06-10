@@ -37,5 +37,8 @@ module TokyoDomeEvent
     end
 
     doc = Nokogiri::HTML.parse(response.body.force_encoding('UTF-8'))
+
+    column = doc.xpath("//th[contains(./text(), '#{target.day}日')]/following-sibling::*")
+    return nil if column.nil?
   end
 end
