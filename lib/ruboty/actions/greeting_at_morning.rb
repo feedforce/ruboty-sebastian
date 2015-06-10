@@ -1,8 +1,8 @@
 module Ruboty
   module Actions
-    include TokyoDomeEvent
-
     class GreetingAtMorning < Base
+      include TokyoDomeEvent
+
       def call
         week = ["日", "月", "火", "水", "木", "金", "土"]
 
