@@ -6,13 +6,13 @@ module TokyoDomeEvent
     url = "http://www.tokyo-dome.co.jp/tdc-hall/event/"
     doc = Nokogiri::HTML.parse(open(url).read.force_encoding('UTF-8'))
 
-    column = doc.xpath("//span[text()=#{now.day}]/following-sibling::*")
+    column = doc.css("td[id='date_cell_%4d-%02d-%02d'] div" % [now.year, now.month, now.day])
     return if column.empty?
 
-    title = column.children.text.strip
+    title = column.text.strip
 
     unless title.empty? || title == "【reserved】"
-      fragment = column.children.first.values.first.to_s
+      fragment = column.at("a").values[0].to_s
     else
       return
     end
