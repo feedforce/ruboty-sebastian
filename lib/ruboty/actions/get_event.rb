@@ -23,7 +23,7 @@ module TokyoDomeEvent
   end
  
   def get_event_from_dome(now)
-    uri = URI.parse("http://www.tokyo-dome.co.jp/dome/schedule/")
+    url = "http://www.tokyo-dome.co.jp/dome/schedule/"
 
     doc = get_parse_data(url)
 
