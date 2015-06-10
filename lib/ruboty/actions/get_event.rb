@@ -29,21 +29,10 @@ module TokyoDomeEvent
  
     titles = column.xpath(".//p")
     return nil if titles[0].nil? && titles[1].nil?
-    
+
     title = titles[0].children.attribute('alt').value.strip
     vs = titles[1].children.text.strip
 
     {title: title, vs: vs}
-  end
-
-  private
-  def get_parse_data(url)
-    uri = URI.parse(url)
- 
-    response = Net::HTTP.start(uri.host, uri.port) do |http|
-      http.get(uri.path)
-    end
- 
-    Nokogiri::HTML.parse(response.body.force_encoding('UTF-8'))
   end
 end
