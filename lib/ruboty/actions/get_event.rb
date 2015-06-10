@@ -30,10 +30,10 @@ module TokyoDomeEvent
  
   def get_event_from_dome
     now = Time.now
-    uri = URI.parse("http://www.tokyo-dome.co.jp/dome/schedule/?y=#{now.year}&m=#{now.month}")
+    uri = URI.parse("http://www.tokyo-dome.co.jp/dome/schedule/")
  
     response = Net::HTTP.start(uri.host, uri.port) do |http|
-      http.get("#{uri.path}?#{uri.query}")
+      http.get(uri.path)
     end
 
     doc = Nokogiri::HTML.parse(response.body.force_encoding('UTF-8'))
