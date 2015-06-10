@@ -3,8 +3,7 @@ require 'uri'
 require 'nokogiri'
  
 module TokyoDomeEvent 
-  def get_event_from_cityhall
-    now = Time.now
+  def get_event_from_cityhall(now)
     url = "http://www.tokyo-dome.co.jp/tdc-hall/event/"
 
     doc = get_parse_data(url)
@@ -23,8 +22,7 @@ module TokyoDomeEvent
     {title: title, url: url+fragment}
   end
  
-  def get_event_from_dome
-    now = Time.now
+  def get_event_from_dome(now)
     uri = URI.parse("http://www.tokyo-dome.co.jp/dome/schedule/")
 
     doc = get_parse_data(url)
