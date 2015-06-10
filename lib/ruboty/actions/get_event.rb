@@ -27,7 +27,7 @@ module TokyoDomeEvent
 
     doc = get_parse_data(url)
 
-    column = doc.xpath("//th[contains(./text(), '#{target.day}日')]/following-sibling::*")
+    column = doc.xpath("//th[contains(./text(), '#{now.day}日')]/following-sibling::*")
     return nil if column.nil?
  
     titles = column.xpath(".//p")
