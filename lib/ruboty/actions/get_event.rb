@@ -7,14 +7,14 @@ module TokyoDomeEvent
     doc = Nokogiri::HTML.parse(open(url).read.force_encoding('UTF-8'))
 
     column = doc.xpath("//span[text()=#{now.day}]/following-sibling::*")
-    return nil if column.nil?
+    return if column.empty?
 
     title = column.children.text.strip
 
     unless title.empty? || title == "【reserved】"
       fragment = column.children.first.values.first.to_s
     else
-      return nil
+      return
     end
 
     {title: title, url: url+fragment}
@@ -26,7 +26,7 @@ module TokyoDomeEvent
 
     column = doc.xpath("//th[contains(./text(), '#{now.day}日')]/following-sibling::*")
     titles = column.xpath(".//p")
-    return nil if titles[0].nil? && titles[1].nil?
+    return if titles[0].nil? && titles[1].nil?
 
     title = titles[0].children.attribute('alt').value.strip
     vs = titles[1].children.text.strip
