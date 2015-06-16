@@ -4,6 +4,12 @@ module Workday
   def workday?
   end
 
+  def first_of_year
+  end
+
+  def last_of_year
+  end
+
   def first_of_year?
   end
 
