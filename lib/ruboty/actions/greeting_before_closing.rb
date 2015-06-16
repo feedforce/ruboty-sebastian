@@ -11,11 +11,11 @@ module Ruboty
         message.reply(greetings.middle)
 
         # 三言目
-        tokyodome_event = nil # 後日実装するメソッドからイベントを取得する
-        cityhall_event  = nil # 後日実装するメソッドからイベントを取得する
+        tokyodome = get_event_from_dome(now)
+        cityhall  = get_event_from_cityhall(now)
 
-        message.reply(greetings.tokyodome.message % ["【球団戦】", "球団1 - 球団2"]) if tokyodome_event
-        message.reply(greetings.cityhall.message  % ["イベント名", "詳細URL"]) if cityhall_event
+        message.reply(greetings.tokyodome.message % tokyodome) if tokyodome
+        message.reply(greetings.cityhall.message  % cityhall)  if cityhall
       end
 
       private
