@@ -1,3 +1,5 @@
+require 'holiday_jp'
+
 module Workday
   def workday?
   end
