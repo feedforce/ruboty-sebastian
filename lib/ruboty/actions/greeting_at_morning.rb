@@ -35,10 +35,6 @@ module Ruboty
         @messages ||= Sebastian::Settings.greeting_at_morning
       end
 
-      def now
-        @now ||= Time.now
-      end
-
       def last_of_year?
         last = Time.new(now.year, 12, 29)
 
