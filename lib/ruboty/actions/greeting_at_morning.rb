@@ -14,8 +14,8 @@ module Ruboty
         end
 
         # 二言目
-        tokyodome = get_event_from_dome(now)
-        cityhall  = get_event_from_cityhall(now)
+        tokyodome = get_event_from_dome
+        cityhall  = get_event_from_cityhall
 
         message.reply(greetings.tokyodome.message % tokyodome) if tokyodome
         message.reply(greetings.cityhall.message  % cityhall)  if cityhall
