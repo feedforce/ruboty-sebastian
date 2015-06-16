@@ -1,6 +1,8 @@
 module Ruboty
   module Actions
     class GreetingBeforeClosing < Base
+      include TokyoDomeEvent
+
       def call
         # 一言目
         message.reply(greetings.header.sample)
