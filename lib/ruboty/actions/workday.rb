@@ -12,5 +12,6 @@ module Workday
   end
 
   def now
+    @now = DateTime.now
   end
 end
