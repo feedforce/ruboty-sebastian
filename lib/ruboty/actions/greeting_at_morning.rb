@@ -2,6 +2,7 @@ module Ruboty
   module Actions
     class GreetingAtMorning < Base
       include TokyoDomeEvent
+      include Workday
 
       def call
         week = ["日", "月", "火", "水", "木", "金", "土"]
@@ -33,26 +34,6 @@ module Ruboty
       private
       def greetings
         @messages ||= Sebastian::Settings.greeting_at_morning
-      end
-
-      def last_of_year?
-        last = Time.new(now.year, 12, 29)
-
-        last_day = 27 if last.sunday?
-        last_day = 28 if last.saturday?
-        last_day ||= 29
-
-        now.month == 12 && now.day == last_day
-      end
-
-      def first_of_year?
-        first = Time.new(now.year, 1, 5)
-
-        first_day = 7 if first.sunday?
-        first_day = 6 if first.saturday?
-        first_day ||= 5
-
-        now.month == 1 && now.day == first_day
       end
     end
   end
