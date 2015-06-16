@@ -2,7 +2,7 @@ require 'open-uri'
 require 'nokogiri'
  
 module TokyoDomeEvent 
-  def get_event_from_cityhall(now)
+  def get_event_from_cityhall
     url = "http://www.tokyo-dome.co.jp/tdc-hall/event/"
     doc = Nokogiri::HTML.parse(open(url).read.force_encoding('UTF-8'))
 
@@ -20,7 +20,7 @@ module TokyoDomeEvent
     {title: title, url: url+fragment}
   end
  
-  def get_event_from_dome(now)
+  def get_event_from_dome
     url = "http://www.tokyo-dome.co.jp/dome/schedule/"
     doc = Nokogiri::HTML.parse(open(url).read.force_encoding('UTF-8'))
 
@@ -36,5 +36,9 @@ module TokyoDomeEvent
     end
     
     {title: title, vs: vs}
+  end
+
+  def now
+    @now ||= Time.now
   end
 end
