@@ -1,8 +1,7 @@
 # Ruboty::Sebastian
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ruboty/sebastian`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Add Sebastian to ruboty.
+Sebastian greets and notices about today's schedule of Tokyo Dome.
 
 ## Installation
 
@@ -22,13 +21,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+@ruboty greet morning      - Output morning greeting, and notice about today's shedule of Tokyo Dome.
+@ruboty greet before close - Output greeting before close of bissness, and notice about today's schedule of Tokyo Dome.
+@ruboty greet close        - Output greeting at closing.
 
 ## Contributing
 
@@ -37,3 +32,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
