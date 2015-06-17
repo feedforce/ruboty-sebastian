@@ -1,6 +1,6 @@
 # Ruboty::Sebastian
 
-Add Sebastian to ruboty.
+Add [Sebastian](https://github.com/feedforce/sebastian) to ruboty.
 Sebastian greets and informs about today's schedule of Tokyo Dome.
 
 ## Installation
