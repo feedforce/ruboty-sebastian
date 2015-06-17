@@ -21,9 +21,11 @@ Or install it yourself as:
 
 ## Usage
 
+~~~~
 @ruboty greet morning      - Output morning greeting, and notice about today's shedule of Tokyo Dome.
 @ruboty greet before close - Output greeting before close of bissness, and notice about today's schedule of Tokyo Dome.
 @ruboty greet close        - Output greeting at closing.
+~~~~
 
 ## Contributing
 
