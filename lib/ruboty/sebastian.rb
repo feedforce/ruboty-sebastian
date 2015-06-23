@@ -1,3 +1,4 @@
+require "ruboty"
 require "ruboty/sebastian/version"
 require "ruboty/actions/get_event"
 require "ruboty/actions/greeting_at_morning"
