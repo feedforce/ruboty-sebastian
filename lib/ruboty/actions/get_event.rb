@@ -22,7 +22,7 @@ module TokyoDomeEvent
     doc = Nokogiri::HTML.parse(open(url).read.force_encoding('UTF-8'))
 
     column = doc.xpath("//th[contains(./text(), '#{now.day}日')]/..").
-      select{|c| c.xpath("./th").text.strip.match(/\A#{now.day}日/) }.
+      select{|c| c.xpath("./th").text.strip.start_with?("#{now.day}日") }.
       first.xpath("./td//p")
     return if column.empty?
 
