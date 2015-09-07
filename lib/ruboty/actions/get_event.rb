@@ -10,7 +10,7 @@ module TokyoDomeEvent
     return if column.empty?
 
     title = column.text.strip
-    return if title.empty? || title == "【reserved】"
+    return if title.empty? || title == "【reserved】" || title == "【休演日】"
 
     fragment = column.attribute("href").value
 
